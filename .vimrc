@@ -1,43 +1,65 @@
-" --- Базовые настройки ---
-syntax on                   " Включить подсветку синтаксиса
-set number                  " Показать номера строк
-set relativenumber          " Относительные номера (удобно для прыжков j/k)
-set expandtab               " Использовать пробелы вместо табов
-set shiftwidth=4            " Ширина отступа
-set tabstop=4
-set termguicolors           " Поддержка 24-битных цветов
+syntax on
 
+set number
+set smartindent
+set incsearch
+set ignorecase
+set smartcase 
+set showcmd
+set showmatch
+set wildmenu
+set nobackup
+set nowritebackup
+set noswapfile
 call plug#begin()
-" 1. Внешний вид и навигация
-Plug 'morhetz/gruvbox'          " Популярная цветовая схема
-Plug 'preservim/nerdtree'      " Дерево файлов слева
-Plug 'vim-airline/vim-airline'  " Красивая статус-строка снизу
-
-" 2. Работа с Rust
-Plug 'rust-lang/rust.vim'       " Подсветка, форматирование и проверка синтаксиса
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " Движок для автодополнения (LSP)
-
-" 3. Удобство редактирования
-Plug 'tpope/vim-surround'      " Быстрая правка кавычек и скобок
-Plug 'tpope/vim-commentary'    " Комментирование кода через `gcc`
-Plug 'jiangmiao/auto-pairs'    " Автоматическое закрытие скобок
-
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'preservim/nerdtree'
+Plug 'morhetz/gruvbox'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'preservim/nerdcommenter'
+Plug 'alx741/vim-rustfmt'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
-" --- Настройки плагинов ---
 
-" Цветовая схема
+set termguicolors 
+set background=dark
 colorscheme gruvbox
 
-" Настройка Rust: авто-форматирование при сохранении
-let g:rustfmt_autosave = 1
-
-" Настройка NERDTree (открыть/закрыть дерево файлов через Ctrl+n)
 nnoremap <C-n> :NERDTreeToggle<CR>
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" Настройка CoC (автодополнение)
-" Нужно выполнить в Vim: :CocInstall coc-rust-analyzer coc-json
-inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-nnoremap <silent> gd <Plug>(coc-definition)
-nnoremap <silent> gy <Plug>(coc-type-definition)
-nnoremap <silent> gi <Plug>(coc-implementation)
-nnoremap <silent> gr <Plug>(coc-references)
+nnoremap <C-p> :Files<CR>
+nnoremap <C-f> :Rg<CR>
+
+let g:NERDSpaceDelims = 1 " Добавлять пробел после комментария
+let g:NERDDefaultAlign = 'left'
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" gd - перейти к определению
+nmap <silent> gd <Plug>(coc-definition)
+" gy - перейти к типу
+nmap <silent> gy <Plug>(coc-type-definition)
+" gi - перейти к реализации
+nmap <silent> gi <Plug>(coc-implementation)
+" gr - найти использования (references)
+nmap <silent> gr <Plug>(coc-references)
+" K - показать документацию при наведении
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
