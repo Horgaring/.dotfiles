@@ -15,6 +15,8 @@ cp ./.config/hyprland.conf ~/.config/hypr/hyprland.conf
 cp ./.vimrc ~/.vimrc
 cp -r ./waybar ~/.config/
 cp -p ./Wallpapers/wallpaper.jpeg "$WALLPAPER"
+cp -r ./.config/fastfetch ~/.config/
+
 
 # 4. Generate Hyprpaper Config
 echo "preload = $WALLPAPER" > "$HYPRPAPER"
