@@ -15,6 +15,9 @@ cp ./.config/hyprland.conf ~/.config/hypr/hyprland.conf
 cp ./.vimrc ~/.vimrc
 cp -r ./waybar ~/.config/
 cp -p ./Wallpapers/wallpaper.jpeg "$WALLPAPER"
+if [ -d ~/.config/fastfetch ]; then 
+       rmdir -r ~/.config/fastfetch
+fi       
 cp -r ./.config/fastfetch ~/.config/
 
 
