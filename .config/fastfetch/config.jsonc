@@ -1,104 +1,88 @@
-//  Thanks to Bina
 {
-  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-  "logo": {
-      "padding": {
-      "top": 2
-      }
-  },
-  "display": {
-        "separator": " ➜  "
-  },
-  "modules": [
-      "break",
-      "break",
-      "break",
-       {
-          "type": "os",
-          "key": "OS   ",
-          "keyColor": "31",  // = color1
-      },
-      {
-          "type": "kernel",
-          "key": " ├  ",
-          "keyColor": "31",
-      },
-      {
-          "type": "shell",
-          "key": " └  ",
-          "keyColor": "31", 
-      },
-      "break",
-      {
-          "type": "wm",
-          "key": "WM   ",
-          "keyColor": "32", 
-      },
-      {
-          "type": "wmtheme",
-          "key": " ├ 󰉼 ",
-          "keyColor": "32",
-      },
-      {
-          "type": "icons",
-          "key": " ├ 󰀻 ",
-          "keyColor": "32",
-      },
-      {
-          "type": "cursor",
-          "key": " ├  ",
-          "keyColor": "32", 
-      },
-      {
-          "type": "terminal",
-          "key": " ├  ",
-          "keyColor": "32",
-      },
-      {
-          "type": "terminalfont",
-          "key": " └  ",
-          "keyColor": "32", 
-      },
-      "break",
-      {
-          "type": "host",
-          "format": "{5} {1} Type {2}",
-          "key": "PC   ",
-          "keyColor": "33",
-      },
-      {
-          "type": "cpu",
-          "format": "{1} ({3}) @ {7} GHz",
-          "key": " ├  ",
-          "keyColor": "33",
-      },
-      {
-          "type": "gpu",
-          "format": "{1} {2} @ {12} GHz",            
-          "key": " ├ 󰢮 ",
-          "keyColor": "33",
-      },
-      {
-          "type": "memory",
-          "key": " ├  ",
-          "keyColor": "33",
-      },
-      {
-          "type": "swap",
-          "key": " ├ 󰓡 ",
-          "keyColor": "33",
-      },
-      {
-          "type": "disk",
-          "key": " ├ 󰋊 ",
-          "keyColor": "33",
-      },
-      {
-          "type": "monitor",
-          "key": " └  ",
-          "keyColor": "33",
-      },
-      "break",
-      "break",
-  ]
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "type": "small",
+        "padding": {
+            "top": 1
+        }
+    },
+    "display": {
+        "separator": " "
+    },
+    "modules": [
+        {
+            "key": "╭───────────╮",
+            "type": "custom"
+        },
+        {
+            "key": "│ {#31} user    {#keys}│",
+            "type": "title",
+            "format": "{user-name}"
+        },
+        {
+            "key": "│ {#32}󰇅 hname   {#keys}│",
+            "type": "title",
+            "format": "{host-name}"
+        },
+        {
+            "key": "│ {#33}󰅐 uptime  {#keys}│",
+            "type": "uptime"
+        },
+        {
+            "key": "│ {#34}{icon} distro  {#keys}│",
+            "type": "os"
+        },
+        {
+            "key": "│ {#35} kernel  {#keys}│",
+            "type": "kernel"
+        },
+        {
+            "key": "│ {#36}󰇄 desktop {#keys}│",
+            "type": "de"
+        },
+        {
+            "key": "│ {#31} term    {#keys}│",
+            "type": "terminal"
+        },
+        {
+            "key": "│ {#32} shell   {#keys}│",
+            "type": "shell"
+        },
+        {
+            "key": "│ {#33}󰍛 cpu     {#keys}│",
+            "type": "cpu",
+            "showPeCoreCount": true
+        },
+        {
+            "key": "│ {#34}󰉉 disk    {#keys}│",
+            "type": "disk",
+            "folders": "/"
+        },
+        {
+            "key": "│ {#35} memory  {#keys}│",
+            "type": "memory"
+        },
+	{
+            "type": "uptime",     
+	    "key": "│ {#36}{icon} uptime  {#keys}│"
+	},
+        {
+            "key": "│ {#37}󰩟 network {#keys}│",
+            "type": "localip",
+            "format": "{ipv4} ({ifname})"
+        },
+        {
+            "key": "├───────────┤",
+            "type": "custom"
+        },
+        {
+            "key": "│ {#39} colors  {#keys}│",
+            "type": "colors",
+            "symbol": "circle"
+        },
+        {
+            "key": "╰───────────╯",
+            "type": "custom"
+        }
+    ]
 }
