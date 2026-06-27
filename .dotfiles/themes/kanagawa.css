@@ -38,12 +38,11 @@
 @define-color flamingo  #e82424;
 @define-color rosewater #dcd7ba;
 
-/* Additional styling variables - transparent black + wallpaper blue */
-@define-color background-primary   rgba(0, 0, 0, 0.50);
-@define-color background-secondary rgba(122, 144, 141, 0.85);
-@define-color background-hover     rgba(122, 144, 141, 0.45);
-@define-color border-color         rgba(122, 144, 141, 0.5);
-@define-color wallpaper-blue       #7a908d;
+/* Additional styling variables - using solid colors instead of rgba */
+@define-color background-primary   #1f1f28;
+@define-color background-secondary #2a2a37;
+@define-color background-hover     #363646;
+@define-color border-color         #565575;
 
 /* Status colors */
 @define-color success @green;
