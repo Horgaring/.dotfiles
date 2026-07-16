@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 cd "$(dirname "$0")"
 
 
@@ -45,6 +46,8 @@ done
 fi
 
 echo "splash = false" >> "$HYPRPAPER"
+
+./vicinae-setup
 
 echo "Done!"
 
