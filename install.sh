@@ -16,6 +16,8 @@ MAPPINGS=(
 	".vimrc|$HOME/.vimrc"
 	"waybar|$HOME/.config/waybar"
 	".config/fastfetch|$HOME/.config/fastfetch"
+	".config/kitty/colors-wallust.conf|$HOME/.config/kitty/colors-wallust.conf"
+	".config/kitty/colors-matugen.conf|$HOME/.config/kitty/colors-matugen.conf"
 	"Wallpapers/wallpaper.jpeg|$WALLPAPER"
 )
 
