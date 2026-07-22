@@ -1,12 +1,26 @@
 #!/bin/bash
 set -euo pipefail
 
-if paru -Qi vicinae-bin > /dev/null 2>&1; then
-    echo "vicinae already installed"
-else
-    echo "installing vicinae..."
-    paru -S --noconfirm --needed vicinae-bin
+if ! command -v paru > /dev/null 2>&1; then
+    echo "paru not found, installing..."
+    sudo pacman -S --needed --noconfirm base-devel git
+    git clone https://aur.archlinux.org/paru-bin.git /tmp/paru-bin
+    cd /tmp/paru-bin && makepkg -si --noconfirm
 fi
 
-systemctl --user enable --now vicinae
+install() {
+    local pkg="$1"
+    if paru -Qi "$pkg" > /dev/null 2>&1; then
+        echo "$pkg already installed"
+    else
+        echo "installing $pkg..."
+        paru -S --noconfirm --needed "$pkg"
+    fi
+}
 
+install vicinae-bin
+install zen-browser-bin
+install starship
+install yazi
+
+systemctl --user enable --now vicinae

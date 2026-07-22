@@ -14,10 +14,10 @@ MAPPINGS=(
 	".config/hyprlock.conf|$HOME/.config/hypr/hyprlock.conf"
 	".config/hypridle.conf|$HOME/.config/hypr/hypridle.conf"
 	".vimrc|$HOME/.vimrc"
+	".config/starship.toml|$HOME/.config/starship.toml"
 	"waybar|$HOME/.config/waybar"
 	".config/fastfetch|$HOME/.config/fastfetch"
-	".config/kitty/colors-wallust.conf|$HOME/.config/kitty/colors-wallust.conf"
-	".config/kitty/colors-matugen.conf|$HOME/.config/kitty/colors-matugen.conf"
+	".config/kitty/|$HOME/.config/kitty/"
 	"Wallpapers/wallpaper.jpeg|$WALLPAPER"
 )
 
