@@ -1,0 +1,180 @@
+/* =============================================================================
+*
+* Waybar configuration - Modern Style (Simplified)
+*
+* Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
+*
+* =========================================================================== */
+
+@import 'themes/matugen.css';
+
+/* -----------------------------------------------------------------------------
+* Base styles
+* -------------------------------------------------------------------------- */
+
+* {
+	border: none;
+	border-radius: 0;
+	font-family: 'JetBrainsMono Nerd Font', 'JetBrains Mono', 'UbuntuMono', monospace;
+	font-size: 14px;
+	font-weight: 600;
+	min-height: 0;
+	padding: 0;
+	margin: 0;
+}
+
+window#waybar {
+	background: rgba(15, 15, 20, 0.0);
+}
+
+/* -----------------------------------------------------------------------------
+* Tooltips
+* -------------------------------------------------------------------------- */
+
+tooltip {
+	background: @background-primary;
+	color: @text;
+	border-radius: 8px;
+	padding: 8px 12px;
+}
+
+tooltip label {
+	color: @text;
+	font-size: 12px;
+}
+
+/* -----------------------------------------------------------------------------
+* Workspaces
+* -------------------------------------------------------------------------- */
+
+#workspaces {
+	background: @background-primary;
+	border: 1px solid @border-color;
+	padding: 4px;
+	margin: 6px 2px;
+	border-radius: 18px;
+}
+
+#workspaces button {
+	transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+	padding: 6px 10px;
+	margin: 0 2px;
+	background: transparent;
+	color: @text;
+	border-radius: 12px;
+	font-weight: bold;
+}
+
+#workspaces button:hover {
+	background: @background-hover;
+	color: @text;
+}
+
+#workspaces button.active,
+#workspaces button.focused {
+	background: @background-secondary;
+	padding: 6px 18px;
+	color: @base;
+	font-weight: bold;
+	opacity: 1;
+}
+
+#workspaces button.empty {
+	opacity: 0.3;
+}
+
+#workspaces button.urgent {
+	background: @background-secondary;
+	color: @base;
+}
+
+/* -----------------------------------------------------------------------------
+* All modules - unified color, no accent lines
+* -------------------------------------------------------------------------- */
+
+#window,
+#clock,
+#memory,
+#cpu,
+#custom-temperature,
+#battery,
+#backlight,
+#pulseaudio,
+#network,
+#language,
+#keyboard-state,
+#custom-launcher,
+#custom-weather,
+#custom-updates,
+#custom-vpn,
+#custom-notification,
+#custom-screenshot,
+#custom-cava,
+#idle_inhibitor,
+#mode,
+#tray {
+	background: @background-primary;
+	border: 1px solid @border-color;
+	color: @text;
+	margin: 6px 2px;
+	padding: 8px 12px;
+	border-radius: 18px;
+	font-weight: 600;
+}
+
+#custom-launcher {
+	background: @background-secondary;
+	color: @base;
+	font-size: 16px;
+	font-weight: bold;
+	margin: 6px 2px 6px 8px;
+	padding: 8px 14px 8px 10px;
+}
+
+#clock {
+	background: @background-secondary;
+	color: @base;
+	font-size: 15px;
+}
+
+#idle_inhibitor.activated {
+	background: @background-secondary;
+	color: @base;
+}
+
+#tray {
+	margin: 6px 8px 6px 2px;
+}
+
+#tray > .passive {
+	opacity: 0.7;
+}
+
+
+/* -----------------------------------------------------------------------------
+* Hover effects
+* -------------------------------------------------------------------------- */
+
+#clock:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#custom-temperature:hover,
+#backlight:hover,
+#network:hover,
+#pulseaudio:hover,
+#custom-launcher:hover,
+#custom-notification:hover,
+#custom-screenshot:hover,
+#custom-weather:hover,
+#custom-updates:hover,
+#custom-vpn:hover,
+#language:hover,
+#custom-cava:hover {
+	opacity: 0.8;
+}
+
+#custom-screenshot {
+	font-size: 16px;
+	padding: 8px 14px 8px 12px;
+}

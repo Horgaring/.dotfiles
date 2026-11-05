@@ -1,0 +1,18 @@
+{
+   "$schema": "https://vicinae.com/schemas/config.json",
+   "theme": {
+      "light": {
+         "name": "matugen",
+         "icon_theme": "Papirus-Dark"
+      },
+      "dark": {
+         "name": "matugen",
+         "icon_theme": "Papirus-Dark"
+      }
+   },
+   "launcher_window": {
+      "opacity": 0.82,
+      "rounding": 16,
+      "material": "blur"
+   }
+}

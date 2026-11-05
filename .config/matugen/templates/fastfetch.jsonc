@@ -1,0 +1,31 @@
+// Сгенерировано matugen из ~/.config/matugen/templates/fastfetch.jsonc
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "type": "small",
+        "color": { "1": "38;2;{{colors.primary.default.red}};{{colors.primary.default.green}};{{colors.primary.default.blue}}", "2": "38;2;{{colors.tertiary.default.red}};{{colors.tertiary.default.green}};{{colors.tertiary.default.blue}}" },
+        "padding": { "top": 1, "right": 3 }
+    },
+    "display": {
+        "separator": " ",
+        "color": { "keys": "38;2;{{colors.outline.default.red}};{{colors.outline.default.green}};{{colors.outline.default.blue}}", "title": "38;2;{{colors.primary.default.red}};{{colors.primary.default.green}};{{colors.primary.default.blue}}", "output": "38;2;{{colors.on_surface.default.red}};{{colors.on_surface.default.green}};{{colors.on_surface.default.blue}}" }
+    },
+    "modules": [
+        { "type": "custom", "key": "╭───────────╮" },
+        { "type": "title",    "key": "│ {#38;2;{{colors.primary.default.red}};{{colors.primary.default.green}};{{colors.primary.default.blue}}} user    {#keys}│", "format": "{user-name}" },
+        { "type": "title",    "key": "│ {#38;2;{{colors.tertiary.default.red}};{{colors.tertiary.default.green}};{{colors.tertiary.default.blue}}}󰇅 hname   {#keys}│", "format": "{host-name}" },
+        { "type": "uptime",   "key": "│ {#38;2;{{colors.secondary.default.red}};{{colors.secondary.default.green}};{{colors.secondary.default.blue}}}󰅐 uptime  {#keys}│" },
+        { "type": "os",       "key": "│ {#38;2;{{colors.primary.default.red}};{{colors.primary.default.green}};{{colors.primary.default.blue}}}{icon} distro  {#keys}│" },
+        { "type": "kernel",   "key": "│ {#38;2;{{colors.tertiary.default.red}};{{colors.tertiary.default.green}};{{colors.tertiary.default.blue}}} kernel  {#keys}│" },
+        { "type": "wm",       "key": "│ {#38;2;{{colors.secondary.default.red}};{{colors.secondary.default.green}};{{colors.secondary.default.blue}}}󰇄 wm      {#keys}│" },
+        { "type": "terminal", "key": "│ {#38;2;{{colors.primary.default.red}};{{colors.primary.default.green}};{{colors.primary.default.blue}}} term    {#keys}│" },
+        { "type": "shell",    "key": "│ {#38;2;{{colors.tertiary.default.red}};{{colors.tertiary.default.green}};{{colors.tertiary.default.blue}}} shell   {#keys}│" },
+        { "type": "cpu",      "key": "│ {#38;2;{{colors.secondary.default.red}};{{colors.secondary.default.green}};{{colors.secondary.default.blue}}}󰍛 cpu     {#keys}│", "showPeCoreCount": true },
+        { "type": "disk",     "key": "│ {#38;2;{{colors.primary.default.red}};{{colors.primary.default.green}};{{colors.primary.default.blue}}}󰉉 disk    {#keys}│", "folders": "/" },
+        { "type": "memory",   "key": "│ {#38;2;{{colors.tertiary.default.red}};{{colors.tertiary.default.green}};{{colors.tertiary.default.blue}}} memory  {#keys}│" },
+        { "type": "localip",  "key": "│ {#38;2;{{colors.secondary.default.red}};{{colors.secondary.default.green}};{{colors.secondary.default.blue}}}󰩟 network {#keys}│", "format": "{ipv4} ({ifname})" },
+        { "type": "custom",   "key": "├───────────┤" },
+        { "type": "colors",   "key": "│ {#38;2;{{colors.primary.default.red}};{{colors.primary.default.green}};{{colors.primary.default.blue}}} colors  {#keys}│", "symbol": "circle" },
+        { "type": "custom",   "key": "╰───────────╯" }
+    ]
+}

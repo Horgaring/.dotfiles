@@ -1,0 +1,30 @@
+# Сгенерировано matugen
+[meta]
+version = 1
+name = "Matugen"
+description = "Палитра из обоев"
+variant = "dark"
+
+[colors.core]
+background = "{{colors.surface.default.hex}}"
+foreground = "{{colors.on_surface.default.hex}}"
+secondary_background = "{{colors.surface_container.default.hex}}"
+border = "{{colors.outline_variant.default.hex}}"
+accent = "{{colors.primary.default.hex}}"
+
+[colors.accents]
+blue = "#8cbcf0"
+green = "#a9d49b"
+magenta = "{{colors.secondary.default.hex}}"
+orange = "{{colors.primary.default.hex}}"
+purple = "{{colors.secondary.default.hex}}"
+red = "#f2a19a"
+yellow = "{{colors.primary_fixed.default.hex}}"
+cyan = "{{colors.tertiary.default.hex}}"
+
+[colors.list.item.selection]
+background = "{{colors.surface_container_highest.default.hex}}"
+secondary_background = "{{colors.surface_container_high.default.hex}}"
+
+[colors.grid.item]
+background = "{{colors.surface_container_high.default.hex}}"

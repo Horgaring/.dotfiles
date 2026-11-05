@@ -1,0 +1,15 @@
+# Генерируется matugen (scripts/theme.sh) при установке
+.config/hypr/colors.lua
+.config/waybar/themes/matugen.css
+.config/kitty/colors-matugen.conf
+.config/gtk-3.0/colors.css
+.config/gtk-4.0/colors.css
+.config/qt6ct/colors/matugen.conf
+.config/swaync/style.css
+.config/wlogout/style.css
+.config/swayosd/style.css
+.config/btop/themes/matugen.theme
+.config/cava/themes/matugen
+.config/fastfetch/config.jsonc
+.config/starship.toml
+.config/hypr/shell.lua

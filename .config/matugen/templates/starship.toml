@@ -1,0 +1,77 @@
+# Сгенерировано matugen из ~/.config/matugen/templates/starship.toml
+add_newline = true
+palette = "matugen"
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$python\
+$java\
+$nodejs\
+$docker_context\
+$fill\
+$cmd_duration\
+$time\
+$line_break\
+$character"""
+
+[palettes.matugen]
+primary   = "{{colors.primary.default.hex}}"
+tertiary  = "{{colors.tertiary.default.hex}}"
+secondary = "{{colors.secondary.default.hex}}"
+muted     = "{{colors.outline.default.hex}}"
+text      = "{{colors.on_surface.default.hex}}"
+error     = "{{colors.error.default.hex}}"
+
+[directory]
+style = "bold fg:primary"
+format = "[ $path]($style)[$read_only]($read_only_style) "
+read_only = " 󰌾"
+truncation_length = 3
+truncation_symbol = "…/"
+home_symbol = "~"
+
+[git_branch]
+symbol = " "
+format = "[$symbol$branch]($style) "
+style = "fg:tertiary"
+
+[git_status]
+format = "([$all_status$ahead_behind]($style) )"
+style = "fg:secondary"
+
+[python]
+format = "[ $version]($style) "
+style = "fg:muted"
+
+[java]
+format = "[ $version]($style) "
+style = "fg:muted"
+
+[nodejs]
+format = "[ $version]($style) "
+style = "fg:muted"
+
+[docker_context]
+format = "[ $context]($style) "
+style = "fg:muted"
+
+[time]
+disabled = false
+style = "fg:muted"
+format = "[ $time]($style)"
+time_format = "%H:%M"
+
+[cmd_duration]
+min_time = 2000
+style = "fg:primary"
+format = "[ $duration]($style) "
+
+[fill]
+symbol = " "
+
+[character]
+success_symbol = "[❯](bold fg:primary)"
+error_symbol = "[❯](bold fg:error)"
+vicmd_symbol = "[❮](bold fg:tertiary)"
